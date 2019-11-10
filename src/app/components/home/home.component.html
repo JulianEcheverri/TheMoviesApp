@@ -1,1 +1,26 @@
-<p>home works!</p>
+<div class="pb-5">
+    <h1 class="float-left"><small>Your movies</small></h1>
+    <button class="btn btn-outline-primary float-right" [routerLink]="['/addmovie']">Add movie</button>
+</div>
+<hr>
+<br><br>
+<div class="row">
+    <div class="col-5">
+        <!-- <div>
+            <app-movie></app-movie>
+            <app-movie></app-movie>
+        </div> -->
+        <div class="list-group">
+            <button type="button" class="list-group-item list-group-item-action" routerLinkActive="active"><app-movie></app-movie></button>
+        </div>
+    </div>
+    <div class="col-7">
+        <div class="tab-content">
+            <app-moviedetail></app-moviedetail>
+            <!-- <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
+            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
+            <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+            <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div> -->
+        </div>
+    </div>
+</div>
