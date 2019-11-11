@@ -1,15 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { MoviedetailComponent } from './components/moviedetail/moviedetail.component';
-import { AddmovieComponent } from './components/addmovie/addmovie.component';
 import { TopfiveComponent } from './components/topfive/topfive.component';
+import { MovieformComponent } from './components/movieform/movieform.component';
+import { MovielistComponent } from './components/movielist/movielist.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MovieService } from './services/movie/movie.service';
 
 @NgModule({
   declarations: [
@@ -18,15 +20,19 @@ import { TopfiveComponent } from './components/topfive/topfive.component';
     HomeComponent,
     MovieComponent,
     MoviedetailComponent,
-    AddmovieComponent,
-    TopfiveComponent
+    TopfiveComponent,
+    MovieformComponent,
+    MovielistComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    MovieService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

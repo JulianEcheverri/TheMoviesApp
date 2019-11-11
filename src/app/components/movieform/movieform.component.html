@@ -1,0 +1,48 @@
+<form [formGroup]="movieForm" (ngSubmit)="saveForm()">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title float-sm-left">Add movie</h5>
+            <button (click)="saveForm(Title.value, Release.value, Description.value, Image.value)" class="btn btn-success text-right float-right" type="submit" [disabled]="movieForm.invalid">Save movie</button>
+        </div>
+        <div class="card-body">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="Title">Movie title</label>
+                    <input type="text" class="form-control" placeholder="Title" formControlName="Title" #Title>
+                    <div *ngIf="movieForm.controls['Title'].invalid && (movieForm.controls['Title'].dirty || movieForm.controls['Title'].touched)" class="alert alert-danger">
+                        <div *ngIf="movieForm.controls['Title'].errors.required">
+                            Title is required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="Release">Release</label>
+                    <input type="date" class="form-control" placeholder="Release" formControlName="Release" #Release>
+                    <div *ngIf="movieForm.controls['Release'].invalid && (movieForm.controls['Release'].dirty || movieForm.controls['Release'].touched)" class="alert alert-danger">
+                        <div *ngIf="movieForm.controls['Release'].errors.required">
+                            Release is required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="Image">Image</label>
+                    <input type="file" class="form-control-file" formControlName="Image" #Image>
+                    <div *ngIf="movieForm.controls['Image'].invalid && (movieForm.controls['Image'].dirty || movieForm.controls['Image'].touched)" class="alert alert-danger">
+                        <div *ngIf="movieForm.controls['Image'].errors.required">
+                            Image is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Description">Description</label>
+                <textarea type="text" class="form-control" placeholder="Description" formControlName="Description" #Description></textarea>
+                <div *ngIf="movieForm.controls['Description'].invalid && (movieForm.controls['Description'].dirty || movieForm.controls['Description'].touched)" class="alert alert-danger">
+                    <div *ngIf="movieForm.controls['Description'].errors.required">
+                        Description is required
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

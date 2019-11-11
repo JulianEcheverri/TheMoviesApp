@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieService } from '../../services/movie.service';
+import { MovieService } from '../../services/api/movieapi.service';
 
 @Component({
   selector: 'app-topfive',
@@ -11,8 +11,8 @@ export class TopfiveComponent implements OnInit {
 
   constructor(private movieService: MovieService) {
     this.movieService.getTopFiveMovies().subscribe((data: any) => {
-      this.movies = data.movies;
-      console.log(data);
+      this.movies = data;
+      // console.log(data);
     });
    }
 
