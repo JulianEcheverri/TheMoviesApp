@@ -1,16 +1,16 @@
-<li>
-    <div (click)="movieDetail(50) " class="card mb-3 card-pointer" style="max-width: 540px;">
+<li class="list-group-item list-group-item-action mb-2">
+    <div class="card mb-3 card-pointer" style="max-width: 540px;" (click)="movieDetail()">
         <div class="row no-gutters">
             <div class="col-md-4">
-                <img src="assets/img/joker-movie.jpg" class="card-img m-2" alt="...">
+                <img [src]="movie.image | domsanitizer: 'movie.image'" class="card-img" alt="..." style="height: 100%;">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">{{movie.title}}</h5>
                     <p class="card-text"><small class="text-muted">Release date: {{ movie.release | date : 'fullDate' }}</small></p>
-                    <button class="btn btn-outline-danger float-right m-2">Delete</button>
                 </div>
             </div>
         </div>
     </div>
+    <!-- <button class="btn btn-outline-danger float-right">Delete</button> -->
 </li>

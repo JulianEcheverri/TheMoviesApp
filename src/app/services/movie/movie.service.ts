@@ -15,15 +15,23 @@ export class MovieService {
     return this.movies = localStorage.getItem('movies') === null ? this.movies : JSON.parse(localStorage.getItem('movies'));
   }
 
+  getMovie(idx: number) {
+    return this.getMovies().find(x => x.id == idx);
+  }
+
+
   addMovie(movieForm: MovieModel) {
-    let movieToAdd: MovieModel[] = [];
+    let movieArray: MovieModel[] = [];
     if (localStorage.getItem('movies') === null) {
-      movieToAdd.push(movieForm);
-      localStorage.setItem('movies', JSON.stringify(movieToAdd));
+      movieForm.id = movieForm.id + 1;
+      movieArray.push(movieForm);
+      localStorage.setItem('movies', JSON.stringify(movieArray));
     } else {
-      movieToAdd = JSON.parse(localStorage.getItem('movies'));
-      movieToAdd.push(movieForm);
-      localStorage.setItem('movies', JSON.stringify(movieToAdd));
+      movieArray = JSON.parse(localStorage.getItem('movies'));
+      const movieLength = movieArray.length;
+      movieForm.id = movieLength + 1;
+      movieArray.push(movieForm);
+      localStorage.setItem('movies', JSON.stringify(movieArray));
     }
     this.movies.push(movieForm);
   }

@@ -12,6 +12,7 @@ import { MovieformComponent } from './components/movieform/movieform.component';
 import { MovielistComponent } from './components/movielist/movielist.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MovieService } from './services/movie/movie.service';
+import { DomsanitizerPipe } from './pipes/domsanitizer.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MovieService } from './services/movie/movie.service';
     MoviedetailComponent,
     TopfiveComponent,
     MovieformComponent,
-    MovielistComponent
+    MovielistComponent,
+    DomsanitizerPipe
   ],
   imports: [
     BrowserModule,

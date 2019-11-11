@@ -16,9 +16,7 @@ export class MovieComponent implements OnInit {
   ngOnInit() {
   }
 
-  movieDetail(id: any) {
-    this.router.navigate(['/moviedetail', id]);
-    // console.log(artistaId);
+  movieDetail() {
+    this.router.navigate(['/moviedetail', this.movie.id]);
   }
-
 }

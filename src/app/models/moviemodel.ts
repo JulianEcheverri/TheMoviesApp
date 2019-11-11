@@ -1,6 +1,7 @@
 export interface MovieModel {
     title: string;
     release: Date;
-    description: string;
+    description?: string;
     image: string;
+    id: number;
 }
