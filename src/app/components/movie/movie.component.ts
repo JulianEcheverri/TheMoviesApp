@@ -25,8 +25,9 @@ export class MovieComponent implements OnInit {
 
   deleteMovie(movie: any) {
     if (confirm("Are you sure you want to delete this movie?")) {
-      this.movieService.deleteMovie(movie.id);
+      let deleted = this.movieService.deleteMovie(movie.id);
       this.movieDeleted.emit(movie);
+      return deleted;
     }
   }
 }

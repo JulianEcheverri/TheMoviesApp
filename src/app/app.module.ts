@@ -14,7 +14,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MovieService } from './services/movie/movie.service';
 import { DomsanitizerPipe } from './pipes/domsanitizer.pipe';
 import { HeaderComponent } from './components/shared/header/header.component';
-import { LoadingComponent } from './components/shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +26,7 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     MovieformComponent,
     MovielistComponent,
     DomsanitizerPipe,
-    HeaderComponent,
-    LoadingComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.moviesInStore();
+    this.moviesInStorage();
   }
 
   getMovie(movie: any) {
@@ -22,10 +22,10 @@ export class HomeComponent implements OnInit {
 
   getMovieDeleted(movie: any) {
     this.movieDelete = movie;
-    this.moviesInStore();
+    this.moviesInStorage();
   }
 
-  moviesInStore(){
+  moviesInStorage(){
     this.moviesInLocalStore = localStorage.length > 0;
   }
 }
