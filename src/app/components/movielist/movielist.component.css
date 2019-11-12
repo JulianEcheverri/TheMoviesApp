@@ -1,5 +1,5 @@
 .movie-list-group {
-    max-height: 400px;
+    max-height: 600px;
     margin-bottom: 10px;
     overflow: auto;
     -webkit-overflow-scrolling: touch;

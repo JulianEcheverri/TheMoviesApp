@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./movieform.component.css']
 })
 export class MovieformComponent implements OnInit {
+  
   movieForm: FormGroup;
   movieModel: MovieModel;
   base64textString: string;
@@ -57,6 +58,5 @@ export class MovieformComponent implements OnInit {
   handleReaderLoaded(readerEvt) {
     const binaryString = readerEvt.target.result;
     this.base64textString = btoa(binaryString);
-    console.log(btoa(binaryString));
   }
 }

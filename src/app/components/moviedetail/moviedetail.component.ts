@@ -11,17 +11,16 @@ import { MovieService } from '../../services/movie/movie.service';
 export class MoviedetailComponent implements OnInit {
    movie: MovieModel;
   @Input() movieForDetail: MovieModel;
-
+  @Input() movieForDelete: MovieModel;
 
   constructor(private router: ActivatedRoute, private movieService: MovieService) {
    }
 
   ngOnInit() {
-   
+
   }
 
   ngDoCheck(){
-    this.movie = this.movieForDetail;
-    //console.log(this.movie);
+      this.movie = this.movieForDetail;
   }
 }

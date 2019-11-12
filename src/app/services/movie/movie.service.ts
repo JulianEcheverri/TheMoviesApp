@@ -16,7 +16,7 @@ export class MovieService {
   }
 
   getMovie(idx: number) {
-    return this.getMovies().find(x => x.id == idx);
+    return this.movies.find(x => x.id == idx);
   }
 
 
@@ -34,5 +34,14 @@ export class MovieService {
       localStorage.setItem('movies', JSON.stringify(movieArray));
     }
     this.movies.push(movieForm);
+  }
+
+  deleteMovie(id: number){
+    let movieToDelete = this.movies.findIndex(x=> x.id == id);
+    this.movies.splice(movieToDelete, 1);
+    localStorage.clear();
+    if(this.movies.length > 0){
+      localStorage.setItem('movies', JSON.stringify(this.movies));
+    }  
   }
 }

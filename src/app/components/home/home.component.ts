@@ -8,15 +8,24 @@ import { MovieModel } from 'src/app/models/moviemodel';
 })
 export class HomeComponent implements OnInit {
   movieSelected: MovieModel;
+  movieDelete: MovieModel;
   moviesInLocalStore: boolean;
   constructor() {}
 
   ngOnInit() {
-    this.moviesInLocalStore = localStorage.length > 0;
+    this.moviesInStore();
   }
 
   getMovie(movie: any) {
     this.movieSelected = movie;
   }
 
+  getMovieDeleted(movie: any) {
+    this.movieDelete = movie;
+    this.moviesInStore();
+  }
+
+  moviesInStore(){
+    this.moviesInLocalStore = localStorage.length > 0;
+  }
 }

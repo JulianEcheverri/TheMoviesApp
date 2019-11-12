@@ -1,10 +1,11 @@
 <li class="list-group-item list-group-item-action p-0 mb-2">
-    <div class="card card-pointer" style="max-width: 540px; height: 125px;" (click)="movieDetail()">
-        <div class="row no-gutters">
+    <div class="card card-pointer" style="max-width: 540px;">
+        <div class="row no-gutters" (click)="movieDetail()">
             <div class="col-md-4">
                 <img [src]="movie.image | domsanitizer: 'movie.image'" class="card-img" alt="..." style="height: 125px;">
             </div>
             <div class="col-md-8">
+                <i class="fas fa-trash-alt fa-2x float-right m-2" style="width:30px; height: 34px; color: #721c24;" (click)="deleteMovie(movie)"></i>
                 <div class="card-body">
                     <h5 class="card-title">{{movie.title}}</h5>
                     <p class="card-text"><small class="text-muted">Release date: {{ movie.release | date : 'fullDate' }}</small></p>
@@ -12,5 +13,4 @@
             </div>
         </div>
     </div>
-    <!-- <button class="btn btn-outline-danger float-right">Delete</button> -->
 </li>

@@ -6,12 +6,12 @@
 <br><br>
 <div class="row" *ngIf="moviesInLocalStore">
     <div class="col-5">
-        <app-movielist (movie)="getMovie($event)"></app-movielist>
+        <app-movielist (movie)="getMovie($event)" (movieDeleted)="getMovieDeleted($event)"></app-movielist>
     </div>
     <div class="col-7 ">
         <div class="tab-content ">
             <div>
-                <app-moviedetail [movieForDetail]="movieSelected" *ngIf="movieSelected != null"></app-moviedetail>
+                <app-moviedetail [movieForDetail]="movieSelected" [movieForDelete]="movieDelete" *ngIf="movieSelected !== undefined && movieDelete == undefined"></app-moviedetail>
             </div>
         </div>
     </div>
