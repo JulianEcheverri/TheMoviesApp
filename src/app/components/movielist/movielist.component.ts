@@ -9,16 +9,22 @@ import { MovieModel } from 'src/app/models/moviemodel';
 })
 export class MovielistComponent implements OnInit {
   movies: MovieModel[];
+  movieRecieved: MovieModel;
+
+  @Output() movie: EventEmitter<MovieModel>;
 
   // instance the movie service for get the data
   constructor(private movieService: MovieService) {
     this.movies = this.movieService.getMovies(); // get the movies
+    this.movie = new EventEmitter();
   }
 
   ngOnInit() {
   }
 
-  moviesSaved(item) {
-      return false;
+  getMovieSelected(movie: any) {
+    // console.log(movie);
+    this.movieRecieved = movie;
+    this.movie.emit(this.movieRecieved);
   }
 }

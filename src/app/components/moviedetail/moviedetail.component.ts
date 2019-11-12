@@ -9,16 +9,19 @@ import { MovieService } from '../../services/movie/movie.service';
   styleUrls: ['./moviedetail.component.css']
 })
 export class MoviedetailComponent implements OnInit {
-  movie: MovieModel;
-  // @Input() index: number;
-  
+   movie: MovieModel;
+  @Input() movieForDetail: MovieModel;
+
+
   constructor(private router: ActivatedRoute, private movieService: MovieService) {
-    this.router.params.subscribe(item => {
-      this.movie = this.movieService.getMovie(item.id);
-        //console.log(this.movie);
-    });
    }
 
   ngOnInit() {
+   
+  }
+
+  ngDoCheck(){
+    this.movie = this.movieForDetail;
+    //console.log(this.movie);
   }
 }

@@ -1,5 +1,5 @@
 <div class="list-group">
     <ul>
-        <app-movie *ngFor="let item of movies" [movie]="item"></app-movie>
+        <app-movie *ngFor="let item of movies" [movie]="item" (movieSelected)="getMovieSelected($event)"></app-movie>
     </ul>
 </div>

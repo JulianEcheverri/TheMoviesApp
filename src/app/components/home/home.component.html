@@ -6,11 +6,13 @@
 <br><br>
 <div class="row">
     <div class="col-5">
-        <app-movielist></app-movielist>
+        <app-movielist (movie)="getMovieSelected($event)"></app-movielist>
     </div>
-    <div class="col-7">
-        <div class="tab-content">
-            <!-- <app-moviedetail></app-moviedetail> -->
+    <div class="col-7 ">
+        <div class="tab-content ">
+            <div>
+                <app-moviedetail [movieForDetail]="movieSelected" *ngIf="movieSelected != null"></app-moviedetail>
+            </div>
         </div>
     </div>
 </div>
