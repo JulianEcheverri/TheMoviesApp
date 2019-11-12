@@ -1,4 +1,4 @@
-<div class="list-group">
+<div class="list-group animated fadeIn movie-list-group">
     <ul>
         <app-movie *ngFor="let item of movies" [movie]="item" (movieSelected)="getMovieSelected($event)"></app-movie>
     </ul>

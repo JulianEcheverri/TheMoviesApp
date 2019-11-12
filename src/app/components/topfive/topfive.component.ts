@@ -8,15 +8,16 @@ import { MovieService } from '../../services/api/movieapi.service';
 })
 export class TopfiveComponent implements OnInit {
   movies: any[] = [];
+  loading: boolean = true;
 
   constructor(private movieService: MovieService) {
     this.movieService.getTopFiveMovies().subscribe((data: any) => {
       this.movies = data;
-      // console.log(data);
-    });
+    });    
    }
 
   ngOnInit() {
+    this.loading = true;
   }
 
 }

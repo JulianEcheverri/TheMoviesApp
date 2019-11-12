@@ -10,8 +10,8 @@ import { MovieModel } from 'src/app/models/moviemodel';
 export class MovielistComponent implements OnInit {
   movies: MovieModel[];
   movieRecieved: MovieModel;
-
   @Output() movie: EventEmitter<MovieModel>;
+  @Output() moviesAny: EventEmitter<boolean>;
 
   // instance the movie service for get the data
   constructor(private movieService: MovieService) {
@@ -20,11 +20,13 @@ export class MovielistComponent implements OnInit {
   }
 
   ngOnInit() {
+    
   }
 
   getMovieSelected(movie: any) {
     // console.log(movie);
     this.movieRecieved = movie;
     this.movie.emit(this.movieRecieved);
-  }
+  }  
+
 }

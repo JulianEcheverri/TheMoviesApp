@@ -1,7 +1,10 @@
+<h1><span class="fa fa-play-circle">Add Movies</span></h1>
+<hr>
+<br>
 <form [formGroup]="movieForm" (ngSubmit)="saveForm()">
-    <div class="card">
-        <div class="card-header">
-            <h5 class="card-title float-sm-left">Add movie</h5>
+    <div class="card ">
+        <div class="card-header bg-info">
+            <h5 class="card-title float-sm-left" style="color:white">Add movie</h5>
             <button (click)="saveForm(Title.value, Release.value, Description.value, Image.value)" class="btn btn-success text-right float-right" type="submit" [disabled]="movieForm.invalid">Save movie</button>
         </div>
         <div class="card-body">

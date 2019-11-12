@@ -1,0 +1,8 @@
+.card-top-movie:hover {
+    transform: scale(1.1);
+    z-index: 3;
+}
+
+.card-top-movie {
+    transition: transform .2s;
+}

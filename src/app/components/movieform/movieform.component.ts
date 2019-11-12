@@ -30,11 +30,8 @@ export class MovieformComponent implements OnInit {
     });
   }
 
-  resetForm() {
-    this.movieForm.reset();
-  }
-
   saveForm(title, release, description, image, id = 0) {
+    if(title == '' || release == '' || image == '') return false;
     image = this.base64textString;
     this.movieModel = {
       title,
@@ -43,7 +40,6 @@ export class MovieformComponent implements OnInit {
       image ,
       id
     };
-    console.log(this.movieModel);
     this.movieService.addMovie(this.movieModel);
     this.router.navigate(['/home']);
     return false;

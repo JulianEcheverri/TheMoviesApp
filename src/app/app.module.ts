@@ -13,6 +13,8 @@ import { MovielistComponent } from './components/movielist/movielist.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MovieService } from './services/movie/movie.service';
 import { DomsanitizerPipe } from './pipes/domsanitizer.pipe';
+import { HeaderComponent } from './components/shared/header/header.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { DomsanitizerPipe } from './pipes/domsanitizer.pipe';
     TopfiveComponent,
     MovieformComponent,
     MovielistComponent,
-    DomsanitizerPipe
+    DomsanitizerPipe,
+    HeaderComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

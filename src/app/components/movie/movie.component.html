@@ -1,8 +1,8 @@
-<li class="list-group-item list-group-item-action mb-2">
-    <div class="card mb-3 card-pointer" style="max-width: 540px;" (click)="movieDetail()">
+<li class="list-group-item list-group-item-action p-0 mb-2">
+    <div class="card card-pointer" style="max-width: 540px; height: 125px;" (click)="movieDetail()">
         <div class="row no-gutters">
             <div class="col-md-4">
-                <img [src]="movie.image | domsanitizer: 'movie.image'" class="card-img" alt="..." style="height: 100%;">
+                <img [src]="movie.image | domsanitizer: 'movie.image'" class="card-img" alt="..." style="height: 125px;">
             </div>
             <div class="col-md-8">
                 <div class="card-body">

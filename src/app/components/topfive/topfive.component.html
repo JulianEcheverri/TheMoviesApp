@@ -1,7 +1,8 @@
-<h1 class="">Top 5 Movies</h1>
+<h1 class="">Top 5 Movies <i class="fas fa-film"></i></h1>
 <hr>
-<div class="row">
-    <div class="card mb-3" *ngFor="let item of movies" style="width: 14rem;">
+<app-loading *ngIf="!loading"></app-loading>
+<div class="row animated fadeIn" *ngIf="loading">
+    <div class="card mb-3 card-top-movie card-pointer" *ngFor="let item of movies" style="width: 14rem;">
         <img [src]="item.image" class="card-img-top" [alt]="item.title">
         <div class="card-body">
             <h5 class="card-title">{{item.title}}</h5>
